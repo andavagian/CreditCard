@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="card">
+        <div>
+            <img src="images/chip.png" alt="" id="img1">
+            <img src="images/visa.png" alt="" id="img2">
+        </div>
+        <p id="card_number" onclick="pointNumber()">
+            <span>####</span>
+            <span>####</span>
+            <span>####</span>
+            <span>####</span>
+        </p>
+        <div id="card_holder_expires">
+            <div>
+                <p>Card Holder</p>
+                <p id="full_name" onclick="pointName()">FULL NAME</p>
+            </div>
+            <div>
+                <p>Expires</p>
+                <p id="mm_yy" onclick="pointDate()">MM/YY</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="form">
+        <div id="card_number_div">
+            <p>Card Number</p>
+            <input type="text" id="card_number_input" oninput="changeNumber()">
+        </div>
+        <div id="card_holder_div">
+            <p>Card Holder</p>
+            <input type="text" id="card_holder_input" oninput="changeName()">
+        </div>
+        <div id="date_cvv">
+            <div id="date">
+                <p>Expiration Date</p>
+                <div>
+                    <select id="month" onchange="changeDate1()">
+                        <option value="" disabled selected>Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="year" onchange="changeDate2()">
+                        <option value="" disabled selected>Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                    </select>
+                </div>
+            </div>
+            <div id="cvv_div">
+                <p>CVV</p>
+                <input type="text" id="cvv_input" onclick="rotateCard()" onblur="resetCard()" oninput="changeCvv()">
+            </div>
+        </div>
+        <button>Submit</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
